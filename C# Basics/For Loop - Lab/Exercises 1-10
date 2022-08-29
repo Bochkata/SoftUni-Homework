@@ -1,0 +1,149 @@
+using System;
+
+namespace Exercises
+{
+     class Program
+    {
+        static void Main(string[] args)
+        {
+            //---------------------1------------------------------------
+            for (int i = 1; i < 101; i++)
+            {
+                Console.WriteLine(i);
+            }
+            //---------------------2------------------------------------
+            int number = int.Parse(Console.ReadLine());
+            for (int i = number; i > 0; i--)
+            {
+                Console.WriteLine(i);
+            }
+            //---------------------3------------------------------------
+            int number = int.Parse(Console.ReadLine());
+            for (int i = 1; i <= number; i = i + 3)
+            {
+                Console.WriteLine(i);
+            }
+            //---------------------4------------------------------------
+            int number = int.Parse(Console.ReadLine());
+            for (int i = 0; i <= number; i = i + 1)
+            {
+                if (i % 2 == 0)
+                {
+                    Console.WriteLine(Math.Pow(2, i));
+                }
+            }
+            //---------------------5------------------------------------
+            string text = Console.ReadLine();
+            for (int i = 0; i < text.Length; i++)
+            {
+                char letter = text[i];
+                Console.WriteLine(letter);
+            }
+            //---------------------6------------------------------------
+            string text = Console.ReadLine();
+            int sum = 0;
+            for (int i = 0; i < text.Length; i++)
+            {
+                char letter = text[i];
+                if (letter == 'a')
+                {
+                    sum = sum + 1;
+                }
+                if (letter == 'e')
+                {
+                    sum = sum + 2;
+                }
+                if (letter == 'i')
+                {
+                    sum = sum + 3;
+                }
+                if (letter == 'o')
+                {
+                    sum = sum + 4;
+                }
+                if (letter == 'u')
+                {
+                    sum = sum + 5;
+                }
+            }
+            Console.WriteLine(sum);
+        
+        //---------------------7------------------------------------
+        int numberCount = int.Parse(Console.ReadLine());
+        int sum = 0;
+            for (int i = 0; i<numberCount; i++)
+            {
+                int number = int.Parse(Console.ReadLine());
+        sum = sum + number;
+            }
+    Console.WriteLine(sum);
+            //---------------------8------------------------------------
+            int numberCount = int.Parse(Console.ReadLine());
+            int maxValue = int.MinValue;
+            int minValue = int.MaxValue;
+            for (int i = 0; i < numberCount; i++)
+            {
+                int number = int.Parse(Console.ReadLine());
+                if (number >= maxValue)
+                {
+                    maxValue = number;
+                }
+                if (number <= minValue)
+                {
+                    minValue = number;
+                }
+            }
+            Console.WriteLine("Max number: " + maxValue);
+            Console.WriteLine("Min number: " + minValue);
+            //---------------------9------------------------------------
+            int numberPairs = int.Parse(Console.ReadLine());
+            int sum1 = 0;
+            int sum2 = 0;
+            for (int i = 0; i < numberPairs; i++)
+            {
+                int number = int.Parse(Console.ReadLine());
+                sum1 = sum1 + number;
+            }
+            for (int i = 0; i < numberPairs; i++)
+            {
+                int number = int.Parse(Console.ReadLine());
+                sum2 = sum2 + number;
+            }
+            if (sum1 == sum2)
+            {
+                Console.WriteLine("Yes, sum = " + sum1);
+            }
+            else
+            {
+                Console.WriteLine("No, diff = " + Math.Abs(sum2 - sum1));
+            }
+            //---------------------10------------------------------------
+            int numberCount = int.Parse(Console.ReadLine());
+            int sumOdd = 0;
+            int sumEven = 0;
+            for (int i = 1; i <= numberCount; i = i + 1)
+            {
+                int number = int.Parse(Console.ReadLine());
+                if (i % 2 == 0)
+                {
+                    sumEven = sumEven + number;
+                }
+                if (i % 2 != 0)
+                {
+                    sumOdd = sumOdd + number;
+                }
+            }
+            if (sumEven == sumOdd)
+            {
+                Console.WriteLine("Yes");
+                Console.WriteLine("Sum = " + sumOdd);
+            }
+            else
+            {
+                Console.WriteLine("No");
+                Console.WriteLine("Diff = " + Math.Abs(sumOdd - sumEven));
+            }
+
+        }
+    }
+}
