@@ -1,0 +1,127 @@
+using System;
+
+namespace Exercises
+{
+     class Program
+    {
+        static void Main(string[] args)
+        {
+            //---------------------1------------------------------------
+            int timeOne = int.Parse(Console.ReadLine());
+            int timeTwo = int.Parse(Console.ReadLine());
+            int timeThree = int.Parse(Console.ReadLine());
+            int totalSeconds = timeOne + timeTwo + timeThree;
+            int minutes = totalSeconds / 60;
+            int seconds = totalSeconds % 60;
+            if (seconds < 10) { Console.WriteLine($"{minutes}:{seconds:d2}"); }
+            else { Console.WriteLine($"{minutes}:{seconds}"); }
+            //---------------------2------------------------------------
+            int points = int.Parse(Console.ReadLine());
+            double bonusPoints = 0;
+            if (points <= 100) { bonusPoints += 5; }
+            else if (points > 1000) { bonusPoints = points * 0.10; }
+            else { bonusPoints = points * 0.20; }
+            if (points % 2 == 0) { bonusPoints++; }
+            if (points % 10 == 5) { bonusPoints += 2; }
+            Console.WriteLine($"{bonusPoints}\n{points + bonusPoints}");
+            //---------------------3------------------------------------
+            double speed = double.Parse(Console.ReadLine());
+            if (speed <= 10) { Console.WriteLine("slow"); }
+            else if (speed > 10 && speed <= 50) { Console.WriteLine("average"); }
+            else if (speed > 50 && speed <= 150) { Console.WriteLine("fast"); }
+            else if (speed > 150 && speed <= 1000) { Console.WriteLine("ultra fast"); }
+            else { Console.WriteLine("extremely fast"); }
+            //---------------------4------------------------------------
+            double numberToConvert = double.Parse(Console.ReadLine());
+            string inputMeasurement = Console.ReadLine();
+            string outputMeasurement = Console.ReadLine();
+            if (inputMeasurement == "m" && outputMeasurement == "m")
+            {
+                Console.WriteLine($"{numberToConvert:f3}");
+            }
+            else if (inputMeasurement == "m" && outputMeasurement == "cm")
+            {
+                numberToConvert = numberToConvert * 100;
+                Console.WriteLine($"{numberToConvert:f3}");
+            }
+            else if (inputMeasurement == "m" && outputMeasurement == "mm")
+            {
+                numberToConvert = numberToConvert * 1000;
+                Console.WriteLine($"{numberToConvert:f3}");
+            }
+            if (inputMeasurement == "cm" && outputMeasurement == "m")
+            {
+                numberToConvert = numberToConvert / 100;
+                Console.WriteLine($"{numberToConvert:f3}");
+            }
+            else if (inputMeasurement == "cm" && outputMeasurement == "cm")
+            {
+                Console.WriteLine($"{numberToConvert:f3}");
+            }
+            else if (inputMeasurement == "cm" && outputMeasurement == "mm")
+            {
+                numberToConvert = numberToConvert * 10;
+                Console.WriteLine($"{numberToConvert:f3}");
+            }
+            if (inputMeasurement == "mm" && outputMeasurement == "m")
+            {
+                numberToConvert = numberToConvert / 1000;
+                Console.WriteLine($"{numberToConvert:f3}");
+            }
+            else if (inputMeasurement == "mm" && outputMeasurement == "cm")
+            {
+                numberToConvert = numberToConvert / 10;
+                Console.WriteLine(($"{numberToConvert:f3}"));
+            }
+            else if (inputMeasurement == "m," && outputMeasurement == "mm")
+            {
+                Console.WriteLine($"{numberToConvert:f3}");
+            }
+            //---------------------5------------------------------------
+            const int OFFSET = 15;
+            int hours = int.Parse(Console.ReadLine());
+            int minutes = int.Parse(Console.ReadLine());
+            minutes += OFFSET;
+            if (minutes >= 60) { minutes = minutes - 60; hours++; }
+            if (hours > 23) { hours = 0; }
+            Console.WriteLine($"{hours}:{minutes:d2}");
+            //---------------------6------------------------------------
+            const double DECOR_RATE = 0.10;
+            const double CLOTHING_DISCOUNT = 0.10;
+            double movieBudget = double.Parse(Console.ReadLine());
+            int extrasQty = int.Parse(Console.ReadLine());
+            double clothingPrice = double.Parse(Console.ReadLine());
+            double neededMoney = 0.0;
+            neededMoney += movieBudget * DECOR_RATE;
+            if (extrasQty > 150)
+                clothingPrice = clothingPrice - (clothingPrice * CLOTHING_DISCOUNT);
+            neededMoney += clothingPrice * extrasQty;
+            if (movieBudget < neededMoney)
+            {
+                Console.WriteLine("Not enough money!");
+                Console.WriteLine($"Wingard needs {neededMoney - movieBudget:f2} leva more.");
+            }
+            else if (movieBudget >= neededMoney)
+            {
+                Console.WriteLine("Action!");
+                Console.WriteLine($"Wingard starts filming with {movieBudget - neededMoney:f2} leva left.");
+            }
+            //---------------------7------------------------------------
+            const double SECONDS_LOST_PER_METER = 12.5;
+            double currentRecord = double.Parse(Console.ReadLine());
+            double distance = double.Parse(Console.ReadLine());
+            double timeMeter = double.Parse(Console.ReadLine());
+            double timesSlowed = Math.Floor(distance / 15);
+            double secondsWasted = timesSlowed * SECONDS_LOST_PER_METER;
+            double timeTaken = (distance * timeMeter) + secondsWasted;
+            if (timeTaken < currentRecord)
+            {
+                Console.WriteLine($"Yes, he succeeded! The new world record is {timeTaken:f2} seconds.");
+            }
+            else
+            {
+                Console.WriteLine($"No, he failed! He was {timeTaken - currentRecord:f2} seconds slower.");
+            }
+        }
+    }
+}
