@@ -1,0 +1,189 @@
+using System;
+
+namespace Exercises
+{
+     class Program
+    {
+        static void Main(string[] args)
+        {
+            //---------------------1------------------------------------
+            for (int i = 1; i <= 1000; i++)
+            {
+                if (i % 10 == 7)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+            //---------------------2------------------------------------
+            int numberCount = int.Parse(Console.ReadLine());
+            int sum = 0;
+            int biggestNumber = int.MinValue;
+            for (int i = 0; i < numberCount; i++)
+            {
+                int number = int.Parse(Console.ReadLine());
+                sum = sum + number;
+                if (biggestNumber < number)
+                {
+                    biggestNumber = number;
+                }
+            }
+            if (sum - biggestNumber == biggestNumber)
+            {
+                Console.WriteLine("Yes");
+                Console.WriteLine("Sum = " + biggestNumber);
+            }
+            else
+            {
+                Console.WriteLine("No");
+                Console.WriteLine("Diff = " + Math.Abs(sum - biggestNumber * 2));
+            }
+            //---------------------3------------------------------------
+            int n = int.Parse(Console.ReadLine());
+            double firstRange = 0;
+            double secondRange = 0;
+            double thirdRange = 0;
+            double forthRange = 0;
+            double fifthRange = 0;
+            for (int i = 0; i < n; i++)
+            {
+                int number = int.Parse(Console.ReadLine());
+                if (number < 200)
+                {
+                    firstRange++;
+                }
+                else if (number < 400)
+                {
+                    secondRange++;
+                }
+                else if (number < 600)
+                {
+                    thirdRange++;
+                }
+                else if (number < 800)
+                {
+                    forthRange++;
+                }
+                else
+                {
+                    fifthRange++;
+                }
+            }
+            double p1 = firstRange * 100 / n;
+            double p2 = secondRange * 100 / n;
+            double p3 = thirdRange * 100 / n;
+            double p4 = forthRange * 100 / n;
+            double p5 = fifthRange * 100 / n;
+            Console.WriteLine($"{p1:f2}%");
+            Console.WriteLine($"{p2:f2}%");
+            Console.WriteLine($"{p3:f2}%");
+            Console.WriteLine($"{p4:f2}%");
+            Console.WriteLine($"{p5:f2}%");
+            //---------------------4------------------------------------
+            double numberQty = double.Parse(Console.ReadLine());
+            double sumEven = 0.0;
+            double maxEven = double.MinValue;
+            double minEven = double.MaxValue;
+            double sumOdd = 0.0;
+            double maxOdd = double.MinValue;
+            double minOdd = double.MaxValue;
+
+            for (int i = 1; i <= numberQty; i++)
+            {
+                double number = double.Parse(Console.ReadLine());
+                if (i % 2 == 0)
+                {
+                    sumEven += number;
+                    if (number > maxEven)
+                    {
+                        maxEven = number;
+                    }
+
+                    if (number < minEven)
+                    {
+                        minEven = number;
+                    }
+                }
+                else
+                {
+                    sumOdd += number;
+                    if (number > maxOdd)
+                    {
+                        maxOdd = number;
+                    }
+
+                    if (number < minOdd)
+                    {
+                        minOdd = number;
+                    }
+                }
+            }
+
+            Console.WriteLine($"OddSum={sumOdd:f2},");
+            if (minOdd == double.MaxValue)
+            {
+                Console.WriteLine("OddMin=No,");
+            }
+            else
+            {
+                Console.WriteLine($"OddMin={minOdd:f2},");
+            }
+            if (maxOdd == double.MinValue)
+            {
+                Console.WriteLine("OddMax=No,");
+            }
+            else
+            {
+                Console.WriteLine($"OddMax={maxOdd:f2},");
+            }
+            Console.WriteLine($"EvenSum={sumEven:f2},");
+            if (minEven == double.MaxValue)
+            {
+                Console.WriteLine("EvenMin=No,");
+            }
+            else
+            {
+                Console.WriteLine($"EvenMin={minEven:f2},");
+            }
+            if (maxEven == double.MinValue)
+            {
+                Console.WriteLine("EvenMax=No");
+            }
+            else
+            {
+                Console.WriteLine($"EvenMax={maxEven:f2}");
+            }
+            //---------------------5------------------------------------
+            int numberOfTabs = int.Parse(Console.ReadLine());
+            double salary = double.Parse(Console.ReadLine());
+            for (int i = 0; i < numberOfTabs; i++)
+            {
+                string siteName = Console.ReadLine();
+                switch (siteName)
+                {
+                    case "Facebook":
+                        salary = salary - 150;
+                        break;
+                    case "Instagram":
+                        salary = salary - 100;
+                        break;
+                    case "Reddit":
+                        salary = salary - 50;
+                        break;
+                    default:
+                        break;
+                }
+                if (salary <= 0)
+                {
+                    Console.WriteLine("You have lost your salary.");
+                    break;
+                }
+            }
+            if (salary > 0)
+            {
+                Console.WriteLine(salary);
+            }
+           
+
+        }
+    }
+}
