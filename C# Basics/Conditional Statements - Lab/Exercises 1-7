@@ -1,0 +1,128 @@
+using System;
+
+namespace Exercises
+{
+     class Program
+    {
+        static void Main(string[] args)
+        {
+            //---------------------1------------------------------------
+            double grade = double.Parse(Console.ReadLine());
+            if (grade >= 5.50)
+            {
+                Console.WriteLine("Excellent!");
+            }
+            //---------------------2------------------------------------
+            int firstNumber = int.Parse(Console.ReadLine());
+            int secondNumber = int.Parse(Console.ReadLine());
+            if (firstNumber >= secondNumber)
+            {
+                Console.WriteLine(firstNumber);
+            }
+            else
+            {
+                Console.WriteLine(secondNumber);
+            }
+            //---------------------3------------------------------------
+            int number = int.Parse(Console.ReadLine());
+            if (number % 2 == 0)
+            {
+                Console.WriteLine("even");
+            }
+            else
+            {
+                Console.WriteLine("odd");
+            }
+            //---------------------4------------------------------------
+            string password = Console.ReadLine();
+            if (password == "s3cr3t!P@ssw0rd")
+            {
+                Console.WriteLine("Welcome");
+            }
+            else
+            {
+                Console.WriteLine("Wrong password!");
+            }
+            //---------------------5------------------------------------
+            int number = int.Parse(Console.ReadLine());
+            if (number < 100)
+            {
+                Console.WriteLine("Less than 100");
+            }
+            if (number > 200)
+            {
+                Console.WriteLine("Greater than 200");
+            }
+            if (number > 99 && number < 201)
+            {
+                Console.WriteLine("Between 100 and 200");
+            }
+            //---------------------6------------------------------------
+            string figureType = Console.ReadLine();
+            if (figureType == "square")
+            {
+                double length = double.Parse(Console.ReadLine());
+                double result = length * length;
+                Console.WriteLine($"{result:F3}");
+            }
+            else if (figureType == "rectangle")
+            {
+                double lengthOne = double.Parse(Console.ReadLine());
+                double lengthTwo = double.Parse(Console.ReadLine());
+                double result = lengthOne * lengthTwo;
+                Console.WriteLine($"{result:F3}");
+            }
+            else if (figureType == "circle")
+            {
+                double radius = double.Parse(Console.ReadLine());
+                double result = Math.PI * Math.Pow(radius, 2);
+                Console.WriteLine($"{result:F3}");
+            }
+            else if (figureType == "triangle")
+            {
+                double length = double.Parse(Console.ReadLine());
+                double height = double.Parse(Console.ReadLine());
+                double result = (length * height) / 2;
+                Console.WriteLine($"{result:F3}");
+            }
+            //---------------------7------------------------------------
+            const double PUZZLE_PRICE = 2.60;
+            const double TALKING_DOLL_PRICE = 3;
+            const double PLUSHIE_PRICE = 4.10;
+            const double MINION_PRICE = 8.20;
+            const double TRUCK_PRICE = 2;
+
+            double vacationPrice = double.Parse(Console.ReadLine());
+
+            int puzzlesQty = int.Parse(Console.ReadLine());
+            int talkingDollsQty = int.Parse(Console.ReadLine());
+            int plushiesQty = int.Parse(Console.ReadLine());
+            int minionsQty = int.Parse(Console.ReadLine());
+            int trucksQty = int.Parse(Console.ReadLine());
+
+            int totalQty = puzzlesQty + talkingDollsQty + plushiesQty + minionsQty + trucksQty;
+            double totalMoney =
+                puzzlesQty * PUZZLE_PRICE +
+                talkingDollsQty * TALKING_DOLL_PRICE +
+                plushiesQty * PLUSHIE_PRICE +
+                minionsQty * MINION_PRICE +
+                trucksQty * TRUCK_PRICE;
+
+            if (totalQty >= 50) { totalMoney = totalMoney * 0.75; }
+
+            totalMoney = totalMoney * 0.9;
+
+            if (totalMoney >= vacationPrice)
+            {
+                double moneyLeft = totalMoney - vacationPrice;
+                Console.WriteLine($"Yes! {moneyLeft:F2} lv left.");
+            }
+            else
+            {
+                double moneyNeeded = vacationPrice - totalMoney;
+                Console.WriteLine($"Not enough money! {moneyNeeded:F2} lv needed.");
+            }
+
+        }
+    }
+}
