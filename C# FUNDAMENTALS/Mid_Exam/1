@@ -1,1 +1,28 @@
+using System;
 
+namespace _1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double budget = double.Parse(Console.ReadLine());
+            int students = int.Parse(Console.ReadLine());
+            double priceFlour = double.Parse(Console.ReadLine());
+            double priceEgg = double.Parse(Console.ReadLine());
+            double priceApron = double.Parse(Console.ReadLine());
+            double sum = 0;
+            int freeFlour = students / 5;
+            sum = priceFlour * (students - freeFlour) + priceEgg * 10 * students + priceApron * Math.Ceiling(students * 1.2);
+            if (sum>budget)
+            {
+                Console.WriteLine($"{sum-budget:F2}$ more needed.");
+            }
+            else
+            {
+                Console.WriteLine($"Items purchased for {sum:f2}$.");
+            }
+
+        }
+    }
+}
