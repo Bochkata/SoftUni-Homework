@@ -1,0 +1,493 @@
+using System;
+
+namespace Exercises
+{
+     class Program
+    {
+        static void Main(string[] args)
+        {
+            //---------------------1------------------------------------
+            int dayOfTheWeek = int.Parse(Console.ReadLine());
+            if (dayOfTheWeek == 1)
+            {
+                Console.WriteLine("Monday");
+            }
+            if (dayOfTheWeek == 2)
+            {
+                Console.WriteLine("Tuesday");
+            }
+            if (dayOfTheWeek == 3)
+            {
+                Console.WriteLine("Wednesday");
+            }
+            if (dayOfTheWeek == 4)
+            {
+                Console.WriteLine("Thursday");
+            }
+            if (dayOfTheWeek == 5)
+            {
+                Console.WriteLine("Friday");
+            }
+            if (dayOfTheWeek == 6)
+            {
+                Console.WriteLine("Saturday");
+            }
+            if (dayOfTheWeek == 7)
+            {
+                Console.WriteLine("Sunday");
+            }
+            if (dayOfTheWeek > 7 || dayOfTheWeek < 1)
+            {
+                Console.WriteLine("Error");
+            }
+            //---------------------2------------------------------------
+            string day = Console.ReadLine();
+            switch (day)
+            {
+                case "Monday":
+                case "Tuesday":
+                case "Wednesday":
+                case "Thursday":
+                case "Friday":
+                    Console.WriteLine("Working day");
+                    break;
+                case "Saturday":
+                case "Sunday":
+                    Console.WriteLine("Weekend");
+                    break;
+                default:
+                    Console.WriteLine("Error");
+                    break;
+            }
+            //---------------------3------------------------------------
+            string animal = Console.ReadLine();
+            switch (animal)
+            {
+                case "dog":
+                    Console.WriteLine("mammal");
+                    break;
+
+                case "crocodile":
+                case "tortoise":
+                case "snake":
+                    Console.WriteLine("reptile");
+                    break;
+
+                default:
+                    Console.WriteLine("unknown");
+                    break;
+            }
+            //---------------------4------------------------------------
+            double age = double.Parse(Console.ReadLine());
+            string gender = Console.ReadLine();
+            if (age >= 16)
+            {
+                if (gender == "f")
+                {
+                    Console.WriteLine("Ms.");
+                }
+                else
+                {
+                    Console.WriteLine("Mr.");
+                }
+            }
+            else if (age <= 16)
+            {
+                if (gender == "f")
+                {
+                    Console.WriteLine("Miss");
+                }
+                else
+                {
+                    Console.WriteLine("Master");
+                }
+            }
+            //---------------------5------------------------------------
+            string item = Console.ReadLine();
+            string ciry = Console.ReadLine();
+            double quantity = double.Parse(Console.ReadLine());
+            if (ciry == "Varna")
+            {
+                if (item == "coffee")
+                {
+                    Console.WriteLine(quantity * 0.45);
+                }
+                if (item == "water")
+                {
+                    Console.WriteLine(quantity * 0.70);
+                }
+                if (item == "beer")
+                {
+                    Console.WriteLine(quantity * 1.10);
+                }
+                if (item == "sweets")
+                {
+                    Console.WriteLine(quantity * 1.35);
+                }
+                if (item == "peanuts")
+                {
+                    Console.WriteLine(quantity * 1.55);
+                }
+            }
+            if (ciry == "Sofia")
+            {
+                if (item == "coffee")
+                {
+                    Console.WriteLine(quantity * 0.50);
+                }
+                if (item == "water")
+                {
+                    Console.WriteLine(quantity * 0.80);
+                }
+                if (item == "beer")
+                {
+                    Console.WriteLine(quantity * 1.20);
+                }
+                if (item == "sweets")
+                {
+                    Console.WriteLine(quantity * 1.45);
+                }
+                if (item == "peanuts")
+                {
+                    Console.WriteLine(quantity * 1.60);
+                }
+            }
+            if (ciry == "Plovdiv")
+            {
+                if (item == "coffee")
+                {
+                    Console.WriteLine(quantity * 0.40);
+                }
+                if (item == "water")
+                {
+                    Console.WriteLine(quantity * 0.70);
+                }
+                if (item == "beer")
+                {
+                    Console.WriteLine(quantity * 1.15);
+                }
+                if (item == "sweets")
+                {
+                    Console.WriteLine(quantity * 1.30);
+                }
+                if (item == "peanuts")
+                {
+                    Console.WriteLine(quantity * 1.50);
+                }
+            }
+            //---------------------6------------------------------------
+            double number = double.Parse(Console.ReadLine());
+            if (number >= -100 && number <= 100 && number != 0)
+            {
+                Console.WriteLine("Yes");
+            }
+            else
+            {
+                Console.WriteLine("No");
+            }
+            //---------------------7------------------------------------
+            int num = int.Parse(Console.ReadLine());
+            string day = Console.ReadLine();
+            switch (day)
+            {
+                case "Monday":
+                case "Tuesday":
+                case "Wednesday":
+                case "Thursday":
+                case "Friday":
+                case "Saturday":
+                    if (num >= 10 && num <= 16)
+                    {
+                        Console.WriteLine("open");
+                    }
+                    else
+                    {
+                        Console.WriteLine("closed");
+                    }
+                    break;
+
+                case "Sunday":
+                    Console.WriteLine("closed");
+                    break;
+                default:
+                    Console.WriteLine("Error");
+                    break;
+            }
+            //---------------------8------------------------------------
+            string day = Console.ReadLine();
+            switch (day)
+            {
+                case "Monday":
+                case "Tuesday":
+                case "Friday":
+                    Console.WriteLine("12");
+                    break;
+                case "Wednesday":
+                case "Thursday":
+                    Console.WriteLine("14");
+                    break;
+                case "Saturday":
+                case "Sunday":
+                    Console.WriteLine("16");
+                    break;
+                default:
+                    Console.WriteLine("Error");
+                    break;
+            }
+            //---------------------9------------------------------------
+            string thing = Console.ReadLine();
+            switch (thing)
+            {
+                case "banana":
+                case "apple":
+                case "kiwi":
+                case "cherry":
+                case "lemon":
+                case "grapes":
+                    Console.WriteLine("fruit");
+                    break;
+                case "tomato":
+                case "cucumber":
+                case "pepper":
+                case "carrot":
+                    Console.WriteLine("vegetable");
+                    break;
+                default:
+                    Console.WriteLine("unknown");
+                    break;
+            }
+            //---------------------10------------------------------------
+            double number = double.Parse(Console.ReadLine());
+            if ((number <= 200 && number >= 100) || number == 0)
+            {
+
+            }
+            else
+            {
+                Console.WriteLine("invalid");
+            }
+            //---------------------11------------------------------------
+            string fruit = Console.ReadLine();
+            string day = Console.ReadLine();
+            double quantity = double.Parse(Console.ReadLine());
+            switch (fruit)
+            {
+                case "banana":
+                    switch (day)
+                    {
+                        case "Monday":
+                        case "Tuesday":
+                        case "Wednesday":
+                        case "Thursday":
+                        case "Friday":
+                            Console.WriteLine($"{quantity * 2.50:f2}");
+                            break;
+                        case "Saturday":
+                        case "Sunday":
+                            Console.WriteLine($"{quantity * 2.70:f2}");
+                            break;
+                        default:
+                            Console.WriteLine("error");
+                            break;
+                    }
+                    break;
+                case "apple":
+                    switch (day)
+                    {
+                        case "Monday":
+                        case "Tuesday":
+                        case "Wednesday":
+                        case "Thursday":
+                        case "Friday":
+                            Console.WriteLine($"{quantity * 1.20:f2}");
+                            break;
+                        case "Saturday":
+                        case "Sunday":
+                            Console.WriteLine($"{quantity * 1.25:f2}");
+                            break;
+                        default:
+                            Console.WriteLine("error");
+                            break;
+                    }
+                    break;
+                case "orange":
+                    switch (day)
+                    {
+                        case "Monday":
+                        case "Tuesday":
+                        case "Wednesday":
+                        case "Thursday":
+                        case "Friday":
+                            Console.WriteLine($"{quantity * 0.85:f2}");
+                            break;
+                        case "Saturday":
+                        case "Sunday":
+                            Console.WriteLine($"{quantity * 0.90:f2}");
+                            break;
+                        default:
+                            Console.WriteLine("error");
+                            break;
+                    }
+                    break;
+                case "grapefruit":
+                    switch (day)
+                    {
+                        case "Monday":
+                        case "Tuesday":
+                        case "Wednesday":
+                        case "Thursday":
+                        case "Friday":
+                            Console.WriteLine($"{quantity * 1.45:f2}");
+                            break;
+                        case "Saturday":
+                        case "Sunday":
+                            Console.WriteLine($"{quantity * 1.60:f2}");
+                            break;
+                        default:
+                            Console.WriteLine("error");
+                            break;
+                    }
+                    break;
+                case "kiwi":
+                    switch (day)
+                    {
+                        case "Monday":
+                        case "Tuesday":
+                        case "Wednesday":
+                        case "Thursday":
+                        case "Friday":
+                            Console.WriteLine($"{quantity * 2.70:f2}");
+                            break;
+                        case "Saturday":
+                        case "Sunday":
+                            Console.WriteLine($"{quantity * 3.00:f2}");
+                            break;
+                        default:
+                            Console.WriteLine("error");
+                            break;
+                    }
+                    break;
+                case "pineapple":
+                    switch (day)
+                    {
+                        case "Monday":
+                        case "Tuesday":
+                        case "Wednesday":
+                        case "Thursday":
+                        case "Friday":
+                            Console.WriteLine($"{quantity * 5.50:f2}");
+                            break;
+                        case "Saturday":
+                        case "Sunday":
+                            Console.WriteLine($"{quantity * 5.60:f2}");
+                            break;
+                        default:
+                            Console.WriteLine("error");
+                            break;
+                    }
+                    break;
+                case "grapes":
+                    switch (day)
+                    {
+                        case "Monday":
+                        case "Tuesday":
+                        case "Wednesday":
+                        case "Thursday":
+                        case "Friday":
+                            Console.WriteLine($"{quantity * 3.85:f2}");
+                            break;
+                        case "Saturday":
+                        case "Sunday":
+                            Console.WriteLine($"{quantity * 4.20:f2}");
+                            break;
+                        default:
+                            Console.WriteLine("error");
+                            break;
+                    }
+                    break;
+                default:
+                    Console.WriteLine("error");
+                    break;
+            }
+            //---------------------12------------------------------------
+            string city = Console.ReadLine();
+            double sales = double.Parse(Console.ReadLine());
+            if (sales < 0)
+            {
+                Console.WriteLine("error");
+            }
+            else
+            {
+                if (city == "Sofia")
+                {
+                    if (sales >= 0 && sales <= 500)
+                    {
+                        sales = sales / 20;
+                    }
+                    else if (sales >= 500 && sales <= 1000)
+                    {
+                        sales = sales * 7 / 100;
+                    }
+                    else if (sales >= 1000 && sales <= 10000)
+                    {
+                        sales = sales * 8 / 100;
+
+                    }
+                    else if (sales >= 10000)
+                    {
+                        sales = sales * 12 / 100;
+                    }
+                    Console.WriteLine($"{sales:F2}");
+                }
+
+                else if (city == "Varna")
+                {
+                    if (sales >= 0 && sales <= 500)
+                    {
+                        sales = sales * 45 / 1000;
+                    }
+                    else if (sales >= 500 && sales <= 1000)
+                    {
+                        sales = sales * 75 / 1000;
+                    }
+                    else if (sales >= 1000 && sales <= 10000)
+                    {
+                        sales = sales / 10;
+
+                    }
+                    else if (sales >= 10000)
+                    {
+                        sales = sales * 13 / 100;
+                    }
+                    Console.WriteLine($"{sales:f2}");
+                }
+
+                else if (city == "Plovdiv")
+                {
+                    if (sales >= 0 && sales <= 500)
+                    {
+                        sales = sales * 55 / 1000;
+                    }
+                    else if (sales >= 500 && sales <= 1000)
+                    {
+                        sales = sales * 8 / 100;
+                    }
+                    else if (sales >= 1000 && sales <= 10000)
+                    {
+                        sales = sales * 12 / 100;
+
+                    }
+                    else if (sales >= 10000)
+                    {
+                        sales = sales * 14.5 / 100;
+                    }
+                    Console.WriteLine($"{sales:f2}");
+                }
+                else
+                {
+                    Console.WriteLine("error");
+                }
+            }
+        }
+    }
+}
