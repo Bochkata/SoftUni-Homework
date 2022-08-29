@@ -1,0 +1,239 @@
+using System;
+
+namespace Exercises
+{
+     class Program
+    {
+        static void Main(string[] args)
+        {
+            //---------------------1------------------------------------
+            int counter = 0;
+            string searchedBook = Console.ReadLine();
+            while (true)
+            {
+                string currentBook = Console.ReadLine();
+
+                if (currentBook == searchedBook)
+                {
+                    Console.WriteLine("You checked {0} books and found it.", counter);
+                    break;
+                }
+                if (currentBook == "No More Books")
+                {
+                    Console.WriteLine("The book you search is not here!");
+                    Console.WriteLine("You checked {0} books.", counter);
+                    break;
+                }
+                counter++;
+            }
+            //---------------------2------------------------------------
+            int a = int.Parse(Console.ReadLine());
+            int poorGradesCounter = 0;
+            string problem = Console.ReadLine();
+            int gradesSum = 0;
+            int gradesCounter = 0;
+            string lastProblem = "";
+
+            while (problem != "Enough")
+            {
+
+                lastProblem = problem;
+                int grade = int.Parse(Console.ReadLine());
+                gradesSum = gradesSum + grade;
+                gradesCounter++;
+                if (grade <= 4)
+                {
+                    poorGradesCounter++;
+                    if (poorGradesCounter == a)
+                    {
+                        Console.WriteLine("You need a break, {0} poor grades.", a);
+                        break;
+                    }
+                }
+                problem = Console.ReadLine();
+            }
+            double averageGrade = (double)gradesSum / gradesCounter;
+            if (problem == "Enough")
+            {
+                Console.WriteLine($"Average score: {averageGrade:F2}");
+                Console.WriteLine("Number of problems: {0}", gradesCounter);
+                Console.WriteLine("Last problem: {0}", lastProblem);
+            }
+            //---------------------3------------------------------------
+            double moneyNeeded = double.Parse(Console.ReadLine());
+            double pocketMoney = double.Parse(Console.ReadLine());
+            string action = Console.ReadLine();//save/spend
+            double moneySpendedOrSaved = double.Parse(Console.ReadLine());
+            int counterSpend = 0;
+            int dayCounter = 1;
+            if (action == "spend")
+            {
+                counterSpend++;
+                if (pocketMoney <= moneySpendedOrSaved)
+                {
+                    pocketMoney = 0;
+                }
+                else
+                {
+                    pocketMoney = pocketMoney - moneySpendedOrSaved;
+                }
+            }
+            else
+            {
+                counterSpend = 0;
+                pocketMoney = pocketMoney + moneySpendedOrSaved;
+            }
+            while (moneyNeeded > pocketMoney)
+            {
+                dayCounter++;
+                action = Console.ReadLine();
+                moneySpendedOrSaved = double.Parse(Console.ReadLine());
+                if (action == "spend")
+                {
+                    counterSpend++;
+                    if (pocketMoney <= moneySpendedOrSaved)
+                    {
+                        pocketMoney = 0;
+                    }
+                    else
+                    {
+                        pocketMoney = pocketMoney - moneySpendedOrSaved;
+                    }
+                }
+                else
+                {
+                    counterSpend = 0;
+                    pocketMoney = pocketMoney + moneySpendedOrSaved;
+                }
+                if (counterSpend == 5)
+                {
+                    Console.WriteLine("You can't save the money.");
+                    Console.WriteLine(dayCounter);
+                    break;
+
+                }
+            }
+            if (moneyNeeded <= pocketMoney)
+            {
+                Console.WriteLine($"You saved the money for {dayCounter} days.");
+            }
+            //---------------------4------------------------------------
+            int steps = 0;
+            string input = Console.ReadLine(); // will read the steps and convert them to int in the loop
+            bool isOver10k = false;
+
+            while (input != "Going home")
+            {
+                steps += int.Parse(input);
+
+                if (steps >= 10000)
+                {
+                    isOver10k = true;
+                    break;
+                }
+
+                input = Console.ReadLine();
+            }
+
+            if (input == "Going home")
+            {
+
+                input = Console.ReadLine();
+                steps += int.Parse(input);
+
+                if (steps >= 10000)
+                {
+                    isOver10k = true;
+                }
+                else if (!isOver10k)
+                {
+                    Console.WriteLine($"{10000 - steps} more steps to reach goal.");
+                }
+
+            }
+            if (isOver10k)
+            {
+                Console.WriteLine("Goal reached! Good job!");
+                Console.WriteLine($"{steps - 10000} steps over the goal!");
+            }
+            //---------------------5------------------------------------
+            decimal change = decimal.Parse(Console.ReadLine());
+            int coin = 0;
+            while (change > 0)
+            {
+                if (change >= 2.00m)
+                {
+                    change -= 2.00m;
+                    coin++;
+                }
+                else if (change >= 1.00m)
+                {
+                    change -= 1.00m;
+                    coin++;
+                }
+                else if (change >= 0.50m)
+                {
+                    change -= 0.50m;
+                    coin++;
+                }
+                else if (change >= 0.20m)
+                {
+                    change -= 0.20m;
+                    coin++;
+                }
+                else if (change >= 0.10m)
+                {
+                    change -= 0.10m;
+                    coin++;
+                }
+                else if (change >= 0.05m)
+                {
+                    change -= 0.05m;
+                    coin++;
+                }
+                else if (change >= 0.02m)
+                {
+                    change -= 0.02m;
+                    coin++;
+                }
+                else if (change >= 0.01m)
+                {
+                    change -= 0.01m;
+                    coin++;
+                }
+            }
+            Console.WriteLine(coin);
+            //---------------------6------------------------------------
+            int length = int.Parse(Console.ReadLine());
+            int width = int.Parse(Console.ReadLine());
+
+            int cakePieces = length * width;
+
+            string input = Console.ReadLine();
+
+            while (input != "STOP")
+            {
+                int currentPieces = int.Parse(input);
+                cakePieces -= currentPieces;
+
+                if (cakePieces <= 0)
+                {
+                    break;
+                }
+
+                input = Console.ReadLine();
+            }
+
+            if (cakePieces > 0)
+            {
+                Console.WriteLine($"{cakePieces} pieces are left.");
+            }
+            else
+            {
+                Console.WriteLine($"No more cake left! You need {Math.Abs(cakePieces)} pieces more.");
+            }
+         
+
+        }
+    }
+}
