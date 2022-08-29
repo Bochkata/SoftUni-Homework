@@ -1,0 +1,173 @@
+using System;
+
+namespace Exercises
+{
+     class Program
+    {
+        static void Main(string[] args)
+        {
+            //---------------------1------------------------------------
+            int n = int.Parse(Console.ReadLine());
+            int br = 1;
+            for (int rows = 1; rows <= n; rows++)
+            {
+                for (int cols = 1; cols <= rows; cols++)
+                {
+                    if (br > n)
+                    {
+                        break;
+                    }
+                    Console.Write(br + " ");
+                    br++;
+                }
+                if (br > n)
+                {
+                    break;
+                }
+                Console.WriteLine();
+
+            }
+            //---------------------2------------------------------------
+            int n = int.Parse(Console.ReadLine());
+            int n1 = int.Parse(Console.ReadLine());
+
+            for (int i = n; i <= n1; i++)
+            {
+                int oddSum = 0;
+                int evenSum = 0;
+                string currentNumber = i.ToString();
+                for (int j = 0; j < currentNumber.Length; j++)
+                {
+                    int digit = int.Parse(currentNumber[j].ToString());
+                    if (j % 2 == 0)
+                    {
+                        evenSum += digit;
+                    }
+                    else
+                    {
+                        oddSum += digit;
+                    }
+
+                }
+                if (evenSum == oddSum)
+                {
+                    Console.Write(i + " ");
+                }
+            }
+            //---------------------3------------------------------------
+            string input = Console.ReadLine();
+            int primeSum = 0;
+            int nonPrimeSum = 0;
+            while (input != "stop")
+            {
+
+                bool isPrime = true;
+                int currentNumber = int.Parse(input);
+                if (currentNumber < 0)
+                {
+                    Console.WriteLine("Number is negative.");
+                }
+
+                for (int i = 2; i < currentNumber; i++)
+                {
+                    if (currentNumber % i == 0)
+                    {
+                        nonPrimeSum += currentNumber;
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if (isPrime == true && currentNumber > 0)
+                {
+                    primeSum += currentNumber;
+                }
+                input = Console.ReadLine();
+            }
+            Console.WriteLine("Sum of all prime numbers is: " + primeSum);
+            Console.WriteLine("Sum of all non prime numbers is: " + nonPrimeSum);
+            //---------------------4------------------------------------
+            int judgeCount = int.Parse(Console.ReadLine());
+            string presentationName = Console.ReadLine();
+            int gradeCounter = 0;
+            double presentationTotalGrades = 0.0;
+
+            while (presentationName != "Finish")
+            {
+                double totalGrade = 0.0;
+
+                for (int i = 0; i < judgeCount; i++)
+                {
+                    double grade = double.Parse(Console.ReadLine());
+                    totalGrade += grade;
+                    presentationTotalGrades += grade;
+                    gradeCounter++;
+                }
+
+                double averageGrade = totalGrade / judgeCount;
+
+                Console.WriteLine($"{presentationName} - {averageGrade:f2}.");
+
+                presentationName = Console.ReadLine();
+            }
+
+            double totalAvetageGrade = presentationTotalGrades / gradeCounter;
+
+            Console.WriteLine($"Student's final assessment is {totalAvetageGrade:f2}.");
+            //---------------------5------------------------------------
+            int number = int.Parse(Console.ReadLine());
+            int letter = int.Parse(Console.ReadLine());
+
+            char[] alphabet =
+            {
+                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+                'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+            };
+
+            // Symbol I
+            for (int i = 1; i <= number; i++)
+            {
+                // Symbol II
+                for (int j = 1; j <= number; j++)
+                {
+                    // Symbol III
+                    for (int k = 0; k < letter; k++)
+                    {
+                        char charOne = alphabet[k];
+                        // Symbol IV
+                        for (int m = 0; m < letter; m++)
+                        {
+                            char charTwo = alphabet[m];
+                            // Symbol V
+                            for (int n = 0; n <= number; n++)
+                            {
+                                if (n > i && n > j)
+                                {
+                                    Console.Write($"{i}{j}{charOne}{charTwo}{n} ");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            //---------------------6------------------------------------
+            int number = int.Parse(Console.ReadLine());
+            int start = 1111;
+            int end = 9999;
+
+            for (int i = start; i <= end; i++)
+            {
+                string currentNumber = i.ToString();
+                int counter = 0;
+
+                for (int j = 0; j < currentNumber.Length; j++)
+                {
+                    int moduloNumber = (int)Char.GetNumericValue(currentNumber[j]);
+                    if (moduloNumber == 0) { continue; }
+                    if (number % moduloNumber == 0) { counter++; }
+                }
+
+                if (counter == 4) { Console.Write($"{i} "); }
+            }
+        }
+     }
+}
