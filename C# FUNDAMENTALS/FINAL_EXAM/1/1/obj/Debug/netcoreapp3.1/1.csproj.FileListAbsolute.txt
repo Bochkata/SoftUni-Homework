@@ -1,0 +1,11 @@
+D:\Programming\Boris\FUNDAMENTALS C#\FINAL_EXAM\1\1\bin\Debug\netcoreapp3.1\1.exe
+D:\Programming\Boris\FUNDAMENTALS C#\FINAL_EXAM\1\1\bin\Debug\netcoreapp3.1\1.deps.json
+D:\Programming\Boris\FUNDAMENTALS C#\FINAL_EXAM\1\1\bin\Debug\netcoreapp3.1\1.runtimeconfig.json
+D:\Programming\Boris\FUNDAMENTALS C#\FINAL_EXAM\1\1\bin\Debug\netcoreapp3.1\1.runtimeconfig.dev.json
+D:\Programming\Boris\FUNDAMENTALS C#\FINAL_EXAM\1\1\bin\Debug\netcoreapp3.1\1.dll
+D:\Programming\Boris\FUNDAMENTALS C#\FINAL_EXAM\1\1\bin\Debug\netcoreapp3.1\1.pdb
+D:\Programming\Boris\FUNDAMENTALS C#\FINAL_EXAM\1\1\obj\Debug\netcoreapp3.1\1.csprojAssemblyReference.cache
+D:\Programming\Boris\FUNDAMENTALS C#\FINAL_EXAM\1\1\obj\Debug\netcoreapp3.1\1.AssemblyInfoInputs.cache
+D:\Programming\Boris\FUNDAMENTALS C#\FINAL_EXAM\1\1\obj\Debug\netcoreapp3.1\1.AssemblyInfo.cs
+D:\Programming\Boris\FUNDAMENTALS C#\FINAL_EXAM\1\1\obj\Debug\netcoreapp3.1\1.dll
+D:\Programming\Boris\FUNDAMENTALS C#\FINAL_EXAM\1\1\obj\Debug\netcoreapp3.1\1.pdb
