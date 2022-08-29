@@ -1,0 +1,105 @@
+using System;
+using System.ComponentModel.Design;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+
+namespace T09KaminoFactory
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int DNALength = int.Parse(Console.ReadLine());
+
+            int maxSequentOnesCount = -1;
+            int firstIndexOfMaxSequentOnes = 4;
+            int maxElementsSum = -1;
+            int bestSample = 0;
+            int currentSample = 0;
+
+
+
+            int[] bestDNA = new int[DNALength];
+
+            while (true)
+            {
+
+                string command = Console.ReadLine();
+                if (command == "Clone them!")
+                {
+                    break;
+                }
+
+                int[] currentDNA = command.Split("!", StringSplitOptions.RemoveEmptyEntries)
+                    .Select(int.Parse).ToArray();
+
+                int currentDNASequentOnesCount = 0;
+                int currentDNAMaxSequentOnesCount = 0;
+                int currentDNAEndIndexOfMaxSequentOnes = 0;
+                int currentDNAStartIndexOfMaxSequentOnes = 0;
+                int currentDNAElementsSum = -1;
+                currentSample++;
+
+                for (int i = 0; i < currentDNA.Length; i++)
+                {
+                    if (currentDNA[i] == 1)
+                    {
+                        currentDNASequentOnesCount++;
+                    }
+                    else if (currentDNA[i] == 0)
+                    {
+                        currentDNASequentOnesCount = 0;
+                    }
+
+                    if (currentDNASequentOnesCount > currentDNAMaxSequentOnesCount)
+                    {
+                        currentDNAMaxSequentOnesCount = currentDNASequentOnesCount;
+                        currentDNAEndIndexOfMaxSequentOnes = i;
+                        currentDNAStartIndexOfMaxSequentOnes =
+                            currentDNAEndIndexOfMaxSequentOnes - currentDNAMaxSequentOnesCount + 1;
+                    }
+
+                    currentDNAElementsSum = currentDNA.Sum();
+
+                }
+
+                bool isBestDNA = false;
+
+                if (currentDNAMaxSequentOnesCount > maxSequentOnesCount)
+                {
+                    isBestDNA = true;
+                }
+                else if (currentDNAMaxSequentOnesCount == maxSequentOnesCount)
+                {
+                    if (currentDNAStartIndexOfMaxSequentOnes < firstIndexOfMaxSequentOnes)
+                    {
+                        firstIndexOfMaxSequentOnes = currentDNAStartIndexOfMaxSequentOnes;
+                        isBestDNA = true;
+                    }
+                    else if (currentDNAStartIndexOfMaxSequentOnes == firstIndexOfMaxSequentOnes)
+                    {
+                        if (currentDNAElementsSum > maxElementsSum)
+                        {
+                            isBestDNA = true;
+                        }
+                    }
+                }
+
+                if (isBestDNA)
+                {
+                    maxSequentOnesCount = currentDNAMaxSequentOnesCount;
+                    firstIndexOfMaxSequentOnes = currentDNAStartIndexOfMaxSequentOnes;
+                    maxElementsSum = currentDNAElementsSum;
+                    bestDNA = currentDNA;
+                    bestSample = currentSample;
+
+                }
+
+            }
+
+            Console.WriteLine($"Best DNA sample {bestSample} with sum: {maxElementsSum}.");
+            Console.WriteLine(String.Join(" ", bestDNA));
+
+        }
+    }
+}
