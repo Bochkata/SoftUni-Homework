@@ -1,0 +1,426 @@
+using System;
+
+namespace Exercises
+{
+     class Program
+    {
+        static void Main(string[] args)
+        {
+            //---------------------1------------------------------------
+            const double PREMIERE_PRICE = 12;
+            const double NORMAL_PRICE = 7.50;
+            const double DISCOUNT_PRICE = 5;
+            string projectionType = Console.ReadLine();
+            int rows = int.Parse(Console.ReadLine());
+            int columns = int.Parse(Console.ReadLine());
+            int totalSeats = rows * columns;
+            double total = 0.0;
+            switch (projectionType)
+            {
+                case "Premiere": total += totalSeats * PREMIERE_PRICE; break;
+                case "Normal": total += totalSeats * NORMAL_PRICE; break;
+                case "Discount": total += totalSeats * DISCOUNT_PRICE; break;
+            }
+            Console.WriteLine($"{total:f2} leva");
+            //---------------------2------------------------------------
+            int degrees = int.Parse(Console.ReadLine());
+            string timeOfDay = Console.ReadLine();
+            string shirt = "";
+            string shoes = "";
+            switch (timeOfDay)
+            {
+                case "Morning":
+                    if (degrees >= 10 && degrees <= 18)
+                    {
+                        shirt = "Sweatshirt";
+                        shoes = "Sneakers";
+                    }
+                    else if (degrees > 18 && degrees <= 24)
+                    {
+                        shirt = "Shirt";
+                        shoes = "Moccasins";
+                    }
+                    else if (degrees >= 25)
+                    {
+                        shirt = "T-Shirt";
+                        shoes = "Sandals";
+                    }
+                    break;
+                case "Afternoon":
+                    if (degrees >= 10 && degrees <= 18)
+                    {
+                        shirt = "Shirt";
+                        shoes = "Moccasins";
+                    }
+                    else if (degrees > 18 && degrees <= 24)
+                    {
+                        shirt = "T-Shirt";
+                        shoes = "Sandals";
+                    }
+                    else if (degrees >= 25)
+                    {
+                        shirt = "Swim Suit";
+                        shoes = "Barefoot";
+                    }
+                    break;
+                case "Evening":
+                    shirt = "Shirt";
+                    shoes = "Moccasins";
+                    break;
+            }
+            Console.WriteLine($"It's {degrees} degrees, get your {shirt} and {shoes}.");
+            //---------------------3------------------------------------
+            const double ROSES_PRICE = 5;
+            const double DAHLIA_PRICE = 3.80;
+            const double TULIP_PRICE = 2.80;
+            const double NARCISSUS_PRICE = 3;
+            const double GLADIOLUS_PRICE = 2.50;
+            string flowerType = Console.ReadLine();
+            int flowerQuantity = int.Parse(Console.ReadLine());
+            int budget = int.Parse(Console.ReadLine());
+            double total = 0.0;
+            switch (flowerType)
+            {
+                case "Roses":
+                    total += flowerQuantity * ROSES_PRICE;
+                    if (flowerQuantity > 80) { total *= 0.9; }
+                    break;
+                case "Dahlias":
+                    total += flowerQuantity * DAHLIA_PRICE;
+                    if (flowerQuantity > 90) { total *= 0.85; }
+                    break;
+                case "Tulips":
+                    total += flowerQuantity * TULIP_PRICE;
+                    if (flowerQuantity > 80) { total *= 0.85; }
+                    break;
+                case "Narcissus":
+                    total += flowerQuantity * NARCISSUS_PRICE;
+                    if (flowerQuantity < 120) { total *= 1.15; }
+                    break;
+                case "Gladiolus":
+                    total += flowerQuantity * GLADIOLUS_PRICE;
+                    if (flowerQuantity < 80) { total *= 1.20; }
+                    break;
+            }
+            if (budget >= total)
+            {
+                Console.WriteLine($"Hey, you have a great garden with {flowerQuantity} {flowerType} and {(budget - total):f2} leva left.");
+            }
+            else if (budget < total)
+            {
+                Console.WriteLine($"Not enough money, you need {(total - budget):f2} leva more.");
+            }
+            //---------------------4------------------------------------
+            const double SPRING_BOAT_RENT = 3000;
+            const double AUTUMN_SUMMER_BOAT_RENT = 4200;
+            const double WINTER_BOAT_RENT = 2600;
+            int budget = int.Parse(Console.ReadLine());
+            string season = Console.ReadLine();
+            int peopleQuantity = int.Parse(Console.ReadLine());
+            double total = 0.0;
+            switch (season)
+            {
+                case "Spring":
+                    total += SPRING_BOAT_RENT;
+                    if (peopleQuantity >= 12)
+                    {
+                        total *= 0.75;
+                    }
+                    else if (peopleQuantity >= 7 &&
+                              peopleQuantity <= 11)
+                    {
+                        total *= 0.85;
+                    }
+                    else if (peopleQuantity <= 6)
+                    {
+                        total *= 0.9;
+                    }
+                    break;
+                case "Summer":
+                case "Autumn":
+                    total += AUTUMN_SUMMER_BOAT_RENT;
+                    if (peopleQuantity >= 12)
+                    {
+                        total *= 0.75;
+                    }
+                    else if (peopleQuantity >= 7 &&
+                              peopleQuantity <= 11)
+                    {
+                        total *= 0.85;
+                    }
+                    else if (peopleQuantity <= 6)
+                    {
+                        total *= 0.9;
+                    }
+                    break;
+                case "Winter":
+                    total += WINTER_BOAT_RENT;
+                    if (peopleQuantity >= 12)
+                    {
+                        total *= 0.75;
+                    }
+                    else if (peopleQuantity >= 7 &&
+                              peopleQuantity <= 11)
+                    {
+                        total *= 0.85;
+                    }
+                    else if (peopleQuantity <= 6)
+                    {
+                        total *= 0.9;
+                    }
+                    break;
+            }
+            if (season != "Autumn" && peopleQuantity % 2 == 0)
+            {
+                total *= 0.95;
+            }
+            if (budget >= total)
+            {
+                Console.WriteLine($"Yes! You have {(budget - total):f2} leva left.");
+            }
+            else if (budget < total)
+            {
+                Console.WriteLine($"Not enough money! You need {(total - budget):f2} leva.");
+            }
+            //---------------------5------------------------------------
+            double budget = double.Parse(Console.ReadLine());
+            string season = Console.ReadLine();
+            string location = "";
+            string restPlace = "";
+            double moneySpent = 0.0;
+
+            if (budget <= 100)
+            {
+                location = "Bulgaria";
+                if (season == "summer")
+                {
+                    moneySpent = budget * 0.3;
+                    restPlace = "Camp";
+                }
+                else if (season == "winter")
+                {
+                    moneySpent = budget * 0.7;
+                    restPlace = "Hotel";
+                }
+            }
+            else if (budget <= 1000)
+            {
+                location = "Balkans";
+                if (season == "summer")
+                {
+                    moneySpent = budget * 0.4;
+                    restPlace = "Camp";
+                }
+                else if (season == "winter")
+                {
+                    moneySpent = budget * 0.8;
+                    restPlace = "Hotel";
+                }
+            }
+            else if (budget > 1000)
+            {
+                location = "Europe";
+                moneySpent = budget * 0.9;
+                restPlace = "Hotel";
+            }
+            Console.WriteLine($"Somewhere in {location}");
+            Console.WriteLine($"{restPlace} - {moneySpent:f2}");
+            //---------------------6------------------------------------
+            double numberOne = double.Parse(Console.ReadLine());
+            double numberTwo = double.Parse(Console.ReadLine());
+            string numberOperator = Console.ReadLine();
+            string everOdd = "";
+            double result = 0.0;
+            switch (numberOperator)
+            {
+                case "+":
+                    result = numberOne + numberTwo;
+                    if (result % 2 == 0)
+                    {
+                        everOdd = "even";
+                    }
+                    else
+                    {
+                        everOdd = "odd";
+                    }
+                    Console.WriteLine($"{numberOne} + {numberTwo} = {result} - {everOdd}");
+                    break;
+                case "-":
+                    result = numberOne - numberTwo;
+                    if (result % 2 == 0)
+                    {
+                        everOdd = "even";
+                    }
+                    else
+                    {
+                        everOdd = "odd";
+                    }
+                    Console.WriteLine($"{numberOne} - {numberTwo} = {result} - {everOdd}");
+                    break;
+                case "*":
+                    result = numberOne * numberTwo;
+                    if (result % 2 == 0)
+                    {
+                        everOdd = "even";
+                    }
+                    else
+                    {
+                        everOdd = "odd";
+                    }
+                    Console.WriteLine($"{numberOne} * {numberTwo} = {result} - {everOdd}");
+                    break;
+                case "/":
+                    if (numberTwo == 0)
+                    {
+                        Console.WriteLine($"Cannot divide {numberOne} by zero");
+                    }
+                    else
+                    {
+                        result = numberOne / numberTwo;
+                        Console.WriteLine($"{numberOne} / {numberTwo} = {result:f2}");
+                    }
+                    break;
+                case "%":
+                    if (numberTwo == 0)
+                    {
+                        Console.WriteLine($"Cannot divide {numberOne} by zero");
+                    }
+                    else
+                    {
+                        result = numberOne % numberTwo;
+                        Console.WriteLine($"{numberOne} % {numberTwo} = {result}");
+                    }
+                    break;
+            }
+            //---------------------7------------------------------------
+            const double MAY_OCTOMBER_STUDIO = 50;
+            const double MAY_OCTOMBER_APARTMENT = 65;
+            const double JUNE_SEPTEMBER_STUDIO = 75.20;
+            const double JUNE_SEPTEMBER_APARTMENT = 68.70;
+            const double JULY_AUGUST_STUDIO = 76;
+            const double JULY_AUGUST_APARTMENT = 77;
+            string month = Console.ReadLine();
+            int stayPeriod = int.Parse(Console.ReadLine());
+            double totalStudio = 0.0;
+            double totalApartment = 0.0;
+            switch (month)
+            {
+                case "May":
+                case "October":
+                    totalStudio += stayPeriod * MAY_OCTOMBER_STUDIO;
+                    totalApartment += stayPeriod * MAY_OCTOMBER_APARTMENT;
+                    if (stayPeriod > 14)
+                    {
+                        totalStudio *= 0.7;
+                        totalApartment *= 0.9;
+                    }
+                    else if (stayPeriod > 7)
+                    {
+                        totalStudio *= 0.95;
+                    }
+                    break;
+                case "June":
+                case "September":
+                    totalStudio += stayPeriod * JUNE_SEPTEMBER_STUDIO;
+                    totalApartment += stayPeriod * JUNE_SEPTEMBER_APARTMENT;
+                    if (stayPeriod > 14)
+                    {
+                        totalStudio *= 0.8;
+                        totalApartment *= 0.9;
+                    }
+                    break;
+                case "July":
+                case "August":
+                    totalStudio += stayPeriod * JULY_AUGUST_STUDIO;
+                    totalApartment += stayPeriod * JULY_AUGUST_APARTMENT;
+                    if (stayPeriod > 14)
+                    {
+                        totalApartment *= 0.9;
+                    }
+                    break;
+            }
+            Console.WriteLine($"Apartment: {totalApartment:f2} lv.");
+            Console.WriteLine($"Studio: {totalStudio:f2} lv.");
+            //---------------------8------------------------------------
+            int examHour = int.Parse(Console.ReadLine());
+            int examMinutes = int.Parse(Console.ReadLine());
+            int arrivalHour = int.Parse(Console.ReadLine());
+            int arrivalMinutes = int.Parse(Console.ReadLine());
+            // Right on the hour
+            if (arrivalHour == examHour && arrivalMinutes == examMinutes)
+            {
+                Console.WriteLine("On time");
+            }
+            // 30 minutes or less early within the same hour
+            else if (arrivalHour == examHour && arrivalMinutes < examMinutes && arrivalMinutes >= examMinutes - 30)
+            {
+                Console.WriteLine("On time");
+                Console.WriteLine($"{examMinutes - arrivalMinutes} minutes before the start");
+            }
+            // 30 minutes or less early in a different hour
+            else if (arrivalHour == examHour - 1 && arrivalMinutes > examMinutes && arrivalMinutes >= 30 && examMinutes <= 29)
+            {
+                Console.WriteLine("On time");
+                Console.WriteLine($"{(60 - arrivalMinutes) + examMinutes} minutes before the start");
+            }
+            // Early within the same hour
+            else if (arrivalHour == examHour && arrivalMinutes < (examMinutes - 30))
+            {
+                Console.WriteLine("Early");
+                Console.WriteLine($"{examMinutes - arrivalMinutes} minutes before the start");
+            }
+            // Early more than an hour
+            else if (arrivalHour < examHour)
+            {
+                int totalMinutes = (60 - arrivalMinutes) + ((examHour - (arrivalHour + 1)) * 60) + examMinutes;
+                int hour = totalMinutes / 60;
+                int minutes = totalMinutes % 60;
+                Console.WriteLine("Early");
+                if (hour != 0)
+                {
+                    Console.WriteLine($"{hour}:{minutes:d2} hours before the start");
+                }
+                else
+                {
+                    Console.WriteLine($"{minutes} minutes before the start");
+                }
+
+            }
+            // Late within the same hour
+            else if (arrivalHour == examHour && arrivalMinutes > examMinutes)
+            {
+                Console.WriteLine("Late");
+                Console.WriteLine($"{arrivalMinutes - examMinutes} minutes after the start");
+            }
+            // Late more than an hour
+            else if (arrivalHour > examHour)
+            {
+                int totalMinutes = (60 - examMinutes) + ((arrivalHour - (examHour + 1)) * 60) + arrivalMinutes;
+                int hour = totalMinutes / 60;
+                int minutes = totalMinutes % 60;
+                Console.WriteLine("Late");
+                if (hour != 0)
+                {
+                    Console.WriteLine($"{hour}:{minutes:d2} hours after the start");
+                }
+                else
+                {
+                    Console.WriteLine($"{minutes} minutes after the start");
+                }
+            }
+            //---------------------9------------------------------------
+            const double WEEKENDS_IN_AN_YEAR = 48;
+            string yearType = Console.ReadLine();
+            int holidayNumber = int.Parse(Console.ReadLine());
+            int weekedTravel = int.Parse(Console.ReadLine());
+
+            double weekendsInSofia = WEEKENDS_IN_AN_YEAR - weekedTravel;
+            double matchesInSofia = weekendsInSofia * 3.0 / 4.0;
+            double matchesInHome = weekedTravel;
+            double matchesOnHolidays = holidayNumber * 2.0 / 3.0;
+            double totalMatches = matchesInSofia + matchesInHome + matchesOnHolidays;
+            if (yearType == "leap") { totalMatches *= 1.15; }
+            Console.WriteLine(Math.Floor(totalMatches));
+        }
+    }
+}
