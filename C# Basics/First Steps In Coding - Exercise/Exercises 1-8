@@ -1,0 +1,80 @@
+using System;
+
+namespace Exercises
+{
+     class Program
+    {
+        static void Main(string[] args)
+        {
+            //---------------------1------------------------------------
+            const double USD_RATE = 1.79549;
+            double bgn = double.Parse(Console.ReadLine());
+            double converted = bgn * USD_RATE;
+            Console.WriteLine(converted);
+            //---------------------2------------------------------------
+            const double RAD_TO_DEG = 180 / Math.PI;
+            double rad = double.Parse(Console.ReadLine());
+            double deg = rad * RAD_TO_DEG;
+            Console.WriteLine(Math.Round(deg));
+            //---------------------3------------------------------------
+            double depositAmount = double.Parse(Console.ReadLine());
+            int monthTerm = int.Parse(Console.ReadLine());
+            double interestRate = double.Parse(Console.ReadLine());
+            interestRate = interestRate / 100;
+            double sum = depositAmount + monthTerm * ((depositAmount * interestRate) / 12);
+            Console.WriteLine(sum);
+            //---------------------4------------------------------------
+            int numberPages = int.Parse(Console.ReadLine());
+            double pagesPerHour = double.Parse(Console.ReadLine());
+            int days = int.Parse(Console.ReadLine());
+            double hoursPerDay = (numberPages / pagesPerHour) / days;
+            Console.WriteLine(hoursPerDay);
+            //---------------------5------------------------------------
+            double hallRent = double.Parse(Console.ReadLine());
+            double cakePrice = hallRent * 0.20;
+            double drinkPrice = ((100 - 45) * 0.01) * cakePrice;
+            double animator = hallRent / 3;
+            double total = hallRent + cakePrice + drinkPrice + animator;
+            Console.WriteLine(total);
+            //---------------------6------------------------------------
+            const double CAKE_PRICE = 45;
+            const double WAFFLE_PRICE = 5.80;
+            const double PANCAKE_PRICE = 3.20;
+            int campaignDays = int.Parse(Console.ReadLine());
+            int confectionersQty = int.Parse(Console.ReadLine());
+            int cakeQty = int.Parse(Console.ReadLine());
+            int waffleQty = int.Parse(Console.ReadLine());
+            int pancakeQty = int.Parse(Console.ReadLine());
+            double cakeSum = cakeQty * CAKE_PRICE;
+            double waffleSum = waffleQty * WAFFLE_PRICE;
+            double pancakeSum = pancakeQty * PANCAKE_PRICE;
+            double sumDay = (cakeSum + waffleSum + pancakeSum) * confectionersQty;
+            double totalSum = sumDay * campaignDays;
+            double totalAfterCosts = totalSum - (totalSum / 8);
+            Console.WriteLine(totalAfterCosts);
+            //---------------------7------------------------------------
+            double strawberriesPrice = double.Parse(Console.ReadLine());
+            double raspberryPrice = ((100 - 50) * 0.01) * strawberriesPrice;
+            double orangesPrice = ((100 - 40) * 0.01) * raspberryPrice;
+            double bananasPrice = ((100 - 80) * 0.01) * raspberryPrice;
+            double bananasKg = double.Parse(Console.ReadLine());
+            double orangesKg = double.Parse(Console.ReadLine());
+            double raspberryKg = double.Parse(Console.ReadLine());
+            double strawberriesKg = double.Parse(Console.ReadLine());
+            double strawberriesTotal = strawberriesKg * strawberriesPrice;
+            double bananasTotal = bananasKg * bananasPrice;
+            double orangesTotal = orangesKg * orangesPrice;
+            double raspberryTotal = raspberryKg * raspberryPrice;
+            double total = strawberriesTotal + bananasTotal + orangesTotal + raspberryTotal;
+            Console.WriteLine($"{total:f2}");
+            //---------------------8------------------------------------
+            int lenght = int.Parse(Console.ReadLine());
+            int width = int.Parse(Console.ReadLine());
+            int height = int.Parse(Console.ReadLine());
+            double percent = double.Parse(Console.ReadLine());
+            double volume = lenght * width * height;
+            double waterVolume = (volume - (volume * (percent * 0.01))) / 1000;
+            Console.WriteLine(waterVolume);
+        }
+    }
+}
