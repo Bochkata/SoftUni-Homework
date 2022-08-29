@@ -1,0 +1,139 @@
+using System;
+
+namespace Exercises
+{
+     class Program
+    {
+        static void Main(string[] args)
+        {
+            //---------------------1------------------------------------
+            while (true)
+            {
+
+                string a = Console.ReadLine();
+                if (a != "Stop")
+                {
+                    Console.WriteLine(a);
+                }
+                else
+                {
+                    break;
+                }
+
+            }
+            //---------------------2------------------------------------
+            string username = Console.ReadLine();
+            string password = Console.ReadLine();
+            string input = Console.ReadLine();
+            while (input != password)
+            {
+                input = Console.ReadLine();
+            }
+            Console.WriteLine("Welcome " + username + "!");
+            //---------------------3------------------------------------
+            int number = int.Parse(Console.ReadLine());
+            int sum = 0;
+            while (true)
+            {
+                if (sum >= number)
+                {
+                    break;
+                }
+                int number1 = int.Parse(Console.ReadLine());
+
+                sum = sum + number1;
+            }
+            Console.WriteLine(sum);
+            //---------------------4------------------------------------
+            int endNumber = int.Parse(Console.ReadLine());
+            int number = 1;
+            while (number <= endNumber)
+            {
+                Console.WriteLine(number);
+                number = number * 2 + 1;
+            }
+            //---------------------5------------------------------------
+            double totalSum = 0;
+            while (true)
+            {
+                string input = Console.ReadLine();
+                if (input == "NoMoreMoney")
+                {
+                    Console.WriteLine($"Total: {totalSum:F2}");
+                    break;
+                }
+                double deposit = double.Parse(input);
+                if (deposit >= 0)
+                {
+                    Console.WriteLine($"Increase: {deposit:F2}");
+                    totalSum += deposit;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid operation!");
+                    Console.WriteLine($"Total: {totalSum:F2}");
+                    break;
+                }
+            }
+            //---------------------6------------------------------------
+            int maxNumber = int.MinValue;
+            string input = Console.ReadLine();
+            while (input != "Stop")
+            {
+                int number = int.Parse(input);
+                input = Console.ReadLine();
+                if (number > maxNumber)
+                {
+                    maxNumber = number;
+                }
+            }
+            Console.WriteLine(maxNumber);
+            //---------------------7------------------------------------
+            int maxNumber = int.MaxValue;
+            string input = Console.ReadLine();
+            while (input != "Stop")
+            {
+                int number = int.Parse(input);
+                input = Console.ReadLine();
+                if (number < maxNumber)
+                {
+                    maxNumber = number;
+                }
+            }
+            Console.WriteLine(maxNumber);
+            //---------------------8------------------------------------
+            string studentName = Console.ReadLine();
+            int course = 1;
+            double averageGrade = 0;
+            int cutCounter = 0;
+            bool hasBeenCut = false;
+
+            while (course <= 12)
+            {
+                double grade = double.Parse(Console.ReadLine());
+                averageGrade += grade;
+                //averageGrade = averageGrade + grade;
+
+                if (grade < 4)
+                {
+                    cutCounter++;
+
+                    if (cutCounter == 2)
+                    {
+                        Console.WriteLine($"{studentName} has been excluded at {course - 1} grade");
+                        hasBeenCut = true;
+                        break;
+                    }
+                }
+
+                course++;
+            }
+
+            if (!hasBeenCut)
+            {
+                Console.WriteLine($"{studentName} graduated. Average grade: {(averageGrade / 12):F2}");
+            }
+
+        }
+    }
+}
