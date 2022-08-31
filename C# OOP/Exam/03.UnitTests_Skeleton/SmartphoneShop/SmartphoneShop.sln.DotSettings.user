@@ -1,0 +1,21 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=338fc10d_002D1152_002D488a_002D8a3b_002D7e367bcdb48e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CheckCtor" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::912F2A04-97B9-4033-9FEA-9D11E4BA9EC2::.NETCoreApp,Version=v3.1::SmartphoneShop.Tests.SmartphoneShopTests.CheckCtor&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::912F2A04-97B9-4033-9FEA-9D11E4BA9EC2::.NETCoreApp,Version=v3.1::SmartphoneShop.Tests.SmartphoneShopTests.Exception_CheckAddMethodModelName&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::912F2A04-97B9-4033-9FEA-9D11E4BA9EC2::.NETCoreApp,Version=v3.1::SmartphoneShop.Tests.SmartphoneShopTests.Exception_CheckAddMethodCapacity&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::912F2A04-97B9-4033-9FEA-9D11E4BA9EC2::.NETCoreApp,Version=v3.1::SmartphoneShop.Tests.SmartphoneShopTests.CheckAddMethodCapacity&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::912F2A04-97B9-4033-9FEA-9D11E4BA9EC2::.NETCoreApp,Version=v3.1::SmartphoneShop.Tests.SmartphoneShopTests.Exception_CheckRemoveMethod&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::912F2A04-97B9-4033-9FEA-9D11E4BA9EC2::.NETCoreApp,Version=v3.1::SmartphoneShop.Tests.SmartphoneShopTests.CheckRemoveMethodCapacity&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::912F2A04-97B9-4033-9FEA-9D11E4BA9EC2::.NETCoreApp,Version=v3.1::SmartphoneShop.Tests.SmartphoneShopTests.Exception_CheckMethodTestPhoneModel&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::912F2A04-97B9-4033-9FEA-9D11E4BA9EC2::.NETCoreApp,Version=v3.1::SmartphoneShop.Tests.SmartphoneShopTests.Exception_CheckMethodTestPhoneBatteryUsage&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::912F2A04-97B9-4033-9FEA-9D11E4BA9EC2::.NETCoreApp,Version=v3.1::SmartphoneShop.Tests.SmartphoneShopTests.CheckMethodTestPhone&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::912F2A04-97B9-4033-9FEA-9D11E4BA9EC2::.NETCoreApp,Version=v3.1::SmartphoneShop.Tests.SmartphoneShopTests.Exception_CheckMethodChargePhone&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::912F2A04-97B9-4033-9FEA-9D11E4BA9EC2::.NETCoreApp,Version=v3.1::SmartphoneShop.Tests.SmartphoneShopTests.CheckMethodChargePhone&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=8cc7f24e_002D638f_002D485a_002Da31d_002Da4f4a5fd2667/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Exception_CheckCapacity" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::912F2A04-97B9-4033-9FEA-9D11E4BA9EC2::.NETCoreApp,Version=v3.1::SmartphoneShop.Tests.SmartphoneShopTests.Exception_CheckCapacity&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
