@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebShopDemo</name>
+    </assembly>
+    <members>
+        <member name="M:WebShopDemo.Controllers.AccountController.Login(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="returnUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebShopDemo.Controllers.HomeController.Privacy">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebShopDemo.Controllers.ProductController">
+            <summary>
+            Web shop products 
+            </summary>
+        </member>
+        <member name="M:WebShopDemo.Controllers.ProductController.Index">
+            <summary>
+            List all products
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:WebShopDemo.Models.LoginViewModel.Email">
+            <summary>
+            Email for login        
+            </summary>
+        </member>
+        <member name="P:WebShopDemo.Models.LoginViewModel.Password">
+            <summary>
+            Password for login
+            </summary>
+        </member>
+        <member name="P:WebShopDemo.Models.LoginViewModel.ReturnUrl">
+            <summary>
+            When using forms authentication and the user is not authenticated or authorized the ASP.NET
+            security pipeline will redirect to the login page and pass as a parameter in the query 
+            string the returnUrl equal to the page that redirected to the login page. The login action
+            grabs the value of this parameter and puts it in the ViewBag so it can be passed to the  View.
+            </summary>
+        </member>
+        <member name="P:WebShopDemo.Models.RegisterViewModel.Email">
+            <summary>
+            Email used for registering
+            </summary>
+        </member>
+        <member name="P:WebShopDemo.Models.RegisterViewModel.Password">
+            <summary>
+            Password chosen for registering
+            The attribute DataType makes it hidden while inputting it
+            </summary>
+        </member>
+        <member name="P:WebShopDemo.Models.RegisterViewModel.PasswordRepeat">
+            <summary>
+            Repeat chosen password
+            </summary>
+        </member>
+        <member name="P:WebShopDemo.Models.RegisterViewModel.FirstName">
+            <summary>
+            First name of new user
+            </summary>
+        </member>
+        <member name="P:WebShopDemo.Models.RegisterViewModel.LastName">
+            <summary>
+            Last name of new user
+            </summary>
+        </member>
+    </members>
+</doc>

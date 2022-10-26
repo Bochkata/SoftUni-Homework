@@ -1,0 +1,36 @@
+﻿@using WebShopDemo.Core.Constants
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<ProductDto>
+
+<h1>@ViewData["Title"] </h1>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<td>Name</td>
+			<td>Price</td>
+			<td>Quantity</td>
+			<td>Buy</td>
+			<td>Delete</td>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (ProductDto product in Model)
+		{
+			<tr>
+				<td>@product.Name</td>
+				<td>@product.Price</td>
+				<td>@product.Quantity</td>
+				<td><button class="btn btn-success">Buy</button></td>
+				<td>
+					<form asp-controller="Product" asp-action="Delete" method="post">
+						<input name="id" type="hidden" value="@product.Id.ToString()">
+						<button type="submit" class="btn btn-danger" @(User.IsInRole(RoleConstants.Supervisor) ? "": "disabled")>Delete</button>
+					</form>
+				</td>
+			</tr>
+		}
+	</tbody>
+
+</table>
