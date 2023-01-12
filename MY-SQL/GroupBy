@@ -1,0 +1,186 @@
+-- 1 Намерете броят на поръчките от 2003 март?
+select count(ordernumber)
+from orders
+where orderdate like '2003-03-%';
+
+-- 2 Намерете сумата на всички отказани поръчки?
+select sum(quantityordered*priceeach)
+from orderdetails
+inner join orders on orderdetails.ordernumber = orders.ordernumber 
+where status = 'cancelled';
+
+-- 3 Намерете броя на плащанията от 2003 март?
+select count(checknumber)
+from payments
+where paymentdate like '2003-%-%';
+
+-- 4 Намерете броя на плащанията за всеки потребител през 2004?
+select customername, count(checknumber)
+from payments 
+inner join customers on customers.customerNumber = payments.customernumber
+where paymentdate like '2004-%-%'
+group by customers.customernumber;
+
+-- 5 Намерете броя на плащанията за всяка държава?
+select country, sum(amount)
+from payments
+inner join customers on customers.customernumber = payments.customernumber
+group by customers.country;
+
+-- 6 Какъв е кредитният лимит и платените суми за всеки клиент?
+select customers.customername, customers.creditlimit, sum(amount)
+from payments
+inner join customers on customers.customernumber = payments.customernumber
+group by customers.customername;
+
+-- 7 Колко поръчки са направили клиентите от Германия? Ами от САЩ?
+select count(ordernumber)
+from orders
+inner join customers on customers.customernumber = orders.customernumber
+where country = 'Germany' or 'USA';
+
+-- 8 Колко клиента имат кредитен лимит над 200 000?
+select count(customernumber)
+from customers
+where creditlimit > 200000;
+
+-- 9 Колко клиента имат кредитен лимит от 0?
+select count(customernumber)
+from customers
+where creditlimit = 0;
+
+-- 10 Колко поръчки са направени на 05.07.2003?
+select count(checknumber)
+from payments 
+where paymentdate like '2003-07-05';
+
+-- 11 Колко поръчки имат коментари?
+select count(ordernumber)
+from orders
+where comments is not null;
+
+-- 12 Каква е средната стойност на поръчките?
+select avg(priceeach*quantityordered) as Average
+from orderdetails;
+
+-- 13 Средно, по колко продукта се поръчват в поръчка?
+select Round(avg(quantityordered), 0)
+from orderdetails;
+
+-- 14 Колко продукта най-много са поръчвани в една поръчка? А колко най-малко?
+select max(quantityordered), min(quantityordered)
+from orderdetails;
+
+-- 15 Каква е средната стойност на направените плащания за всеки клиент? Изведете и името на клиента.
+select customername, avg(amount)
+from customers
+inner join payments on customers.customernumber = payments.customernumber
+group by customers.customernumber;
+
+-- 16 Изведете името на клиента, броя на поръчките му, общата сума, която е заплатил, както и имената на служителя, който отговаря за него.
+select customername, count(orders.ordernumber), sum(quantityordered*priceeach), firstname, lastname
+from customers
+inner join orders on customers.customernumber = orders.customernumber
+inner join orderdetails on orderdetails.ordernumber = orders.ordernumber
+inner join employees on employees.employeenumber = customers.salesrepemployeenumber
+group by customers.customernumber;
+
+-- 17 Градовете, в които има офиси и клиентите, за които отговарят служители от съответния офис, както и общата сума, която всеки клиент е направил.
+select offices.city, firstname, lastname, customername, sum(amount)
+from offices
+join employees on employees.officecode = offices.officecode
+join customers on employees.employeeNumber = customers.salesRepEmployeeNumber
+join payments on customers.customernumber = payments.customernumber
+group by customers.customernumber;
+
+-- 18 Средната стойност на плащания, които всеки град е направил през 2003 година (градовете - от таблица offices, а не customers).
+select offices.city, avg(amount)
+from offices
+join employees on employees.officecode = offices.officecode
+join customers on employees.employeeNumber = customers.salesRepEmployeeNumber
+join payments on customers.customernumber = payments.customernumber
+where paymentdate like '2003-%-%'
+group by offices.city;
+
+-- 19 Броят на поръчките, които всеки служител е направил (имена на служителя и брой поръчки).
+select firstname, lastname, count(ordernumber)
+from orders
+join customers on customers.customernumber = orders.customernumber
+join employees on customers.salesRepEmployeeNumber = employees.employeeNumber
+group by employeenumber;
+
+-- 20 Сумата от направените поръчки за всеки служител по месеци
+select month(paymentdate), firstname, lastname, sum(amount)
+from payments
+join customers on customers.customernumber = payments.customernumber
+join employees on employees.employeeNumber = customers.salesRepEmployeeNumber
+group by month(paymentdate);
+
+-- 21 Броят на държавите, за които отговаря всеки служител (изведете имената на служителя и броя)
+select firstname, lastname, count(country)
+from offices
+join employees on offices.officecode = employees.officecode
+group by employeenumber;
+
+-- 22 Броят на направените плащания, които всеки служител е реализирал (имената на служителя + броя);
+select firstname, lastname, count(checknumber)
+from payments
+join customers on customers.customernumber = payments.customernumber
+join employees on customers.salesRepEmployeeNumber = employees.employeeNumber
+group by employeenumber;
+
+-- 23 Броят на служителите, за които отговаря всеки служител (изведете имената на служителя и броя);
+select e1.firstname, e2.lastname, count(e2.reportsTo)
+from employees as e1
+join employees as e2 on e1.employeeNumber = e2.reportsTo
+group by e1.employeenumber;
+
+-- 24 Кога всеки служител е направил първата си продажба?
+select firstname, lastname, min(orderdate)
+from orders
+join customers on customers.customernumber = orders.customernumber
+join employees on employees.employeeNumber = customers.salesRepEmployeeNumber
+group by employeenumber;
+
+-- 25 По колко поръчки са направили клиентите на служителите, намиращи се в САЩ (проверката на служителите да стане по таблицата с офисите)?
+select firstname, lastname, offices.country, count(ordernumber)
+from employees
+join customers on customers.salesRepEmployeeNumber = employees.employeeNumber
+join orders on customers.customernumber = orders.customernumber
+join offices on offices.officeCode = employees.officecode
+where offices.country = 'USA'
+group by employeenumber;
+
+-- 26 Каква е средната стойност на поръчките  за всяка държава? (държавата вземете от таблицата с клиенти)
+select customers.country, avg(amount)
+from payments
+join customers on customers.customernumber = payments.customernumber
+group by customers.country;
+
+-- 27 Какъв е размерът на плащанията за всяка държава? (този път, държавата вземете от таблицата с офиси);
+select offices.country, sum(amount)
+from payments
+join customers on customers.customernumber = payments.customernumber
+join employees on employees.employeenumber = customers.salesRepEmployeeNumber
+join offices on offices.officecode = employees.officecode
+group by offices.country;
+
+-- 28 Колко клиента нямат попълнен втори адрес?
+select count(customernumber)
+from customers
+where addressline2 is null;
+
+-- 29 Колко поръчки са реализирали служителите, при които датата на очакваната доставка е датата на изпращане?
+select count(ordernumber)
+from orders
+join customers on customers.customernumber = orders.customernumber
+join employees on employees.employeenumber = customers.salesRepEmployeeNumber
+where requireddate = shippeddate;
+
+-- 30 По колко поръчки със статус Отказана има всеки служител?
+select firstname, lastname, count(ordernumber)
+from orders
+join customers on customers.customernumber = orders.customernumber
+join employees on customers.salesRepEmployeeNumber = employees.employeeNumber
+where status = 'cancelled'
+group by employeeNumber;
