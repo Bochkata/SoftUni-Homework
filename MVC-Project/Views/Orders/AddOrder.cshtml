@@ -1,0 +1,158 @@
+﻿@using Industrial_Design.Models.OrderModels;
+@model OrderFormModel
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Заяви проект</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Teko:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <a href="/index.html" class="navbar-brand ms-4 ms-lg-0">
+            <h1 class="text-primary m-0"><img class="me-3" src="/img/icons/Artboard 1 copy 2.png" width="142,6" height="36" alt="Icon"></h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a asp-action="index" asp-controller="home" class="nav-item nav-link ">Начало</a>
+                <a href="/about.html" class="nav-item nav-link">За нас</a>
+                <a href="/service.html" class="nav-item nav-link">Услуги</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Проекти</a>
+                    <div class="dropdown-menu border-0 m-0">
+                        <a asp-action="AddOrder" asp-controller="Orders" class="dropdown-item">Заяви проекти</a>
+                        <a asp-action="AllOrders" asp-controller="Orders" class="dropdown-item">Заявени проекти</a>
+                    </div>
+                </div>
+                <a href="/contact.html" class="nav-item nav-link">Контакти</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <h1 class="display-1 text-white animated slideInDown">ЗАЯВИ ПРОЕКТ</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+            <form method="post">
+                <div class="mb-3">
+                    <label asp-for="@Model.ClientName" class="form-label">ClientName</label>
+                    <input asp-for="@Model.ClientName" class="form-control" aria-required="true" />
+                    <span asp-validation-for="ClientName" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.OrderDate" class="form-label">OrderDate</label>
+                    <input asp-for="@Model.OrderDate" class="form-control" aria-required="true" />
+                    <span asp-validation-for="OrderDate" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.FinishDate" class="form-label">FinishDate</label>
+                    <input asp-for="@Model.FinishDate" class="form-control" aria-required="true" />
+                    <span asp-validation-for="FinishDate" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Information" class="form-label">Information</label>
+                    <input asp-for="@Model.Information" class="form-control" value="" />
+                    <span asp-validation-for="Information" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Price" class="form-label">Price</label>
+                    <input asp-for="@Model.Price" class="form-control" value="" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <input class="btn btn-primary" type="submit" value="Add Order" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Page Header End -->
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-body footer mt-5 pt-5 px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-light mb-4">Адрес</h3>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>ул. "Васил Левски" 10, Полски Тръмбеш</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>0882644204</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@anivia.com</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-light mb-4">Линкове</h3>
+                    <a class="btn btn-link" href="index.html">Начало</a>
+                    <a class="btn btn-link" href="about.html">За нас</a>
+                    <a class="btn btn-link" href="service.html">Услуги</a>
+                    <a class="btn btn-link" href="contact.html">Контакти</a>
+
+                </div>
+            </div>
+            <div class="container-fluid copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a href="#">ANIVIA</a>, Всички права запазени.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        <!-- Back to Top -->
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/tempusdominus/js/moment.min.js"></script>
+        <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+</body>
+
+</html>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

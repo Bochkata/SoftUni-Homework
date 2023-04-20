@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ANIVIA</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Teko:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border position-relative text-primary" style="width: 6rem; height: 6rem;" role="status"></div>
+        <img class="position-absolute top-50 start-50 translate-middle" src="img/icons/icon-1.png" alt="Icon">
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <a href="/index.html" class="navbar-brand ms-4 ms-lg-0">
+            <h1 class="text-primary m-0"><img class="me-3" src="img/icons/Artboard 1 copy 2.png" width="142,6" height="36" alt="Icon"></h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="/index.html" class="nav-item nav-link active ">Начало</a>
+                <a href="/about.html" class="nav-item nav-link ">За нас</a>
+                <a href="/service.html" class="nav-item nav-link">Услуги</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Проекти</a>
+                    <div class="dropdown-menu border-0 m-0">
+                        <a asp-action="AddOrder" asp-controller="Orders" class="dropdown-item">Заяви проекти</a>
+                        <a asp-action="AllOrders" asp-controller="Orders" class="dropdown-item">Заявени проекти</a>
+                    </div>
+                </div>
+                <a href="/contact.html" class="nav-item nav-link">Контакти</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="owl-carousel header-carousel position-relative">
+            <div class="owl-carousel-item position-relative" data-dot="<img src='img/Industrial-Design-Cover-1920x9999.png'>">
+                <img class="img-fluid" src="img/Industrial-Design-Cover-1920x9999.png" alt="">
+                <div class="owl-carousel-inner">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-10 col-lg-8">
+                                <h1 class="display-1 text-white animated slideInDown">Професионални услуги в сферата на индустриалния дизайн</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-3">ANIVIA се специализира в създаването на функционални и естетични дизайн решения за продукти, които не само изглеждат добре, но и подобряват потребителското изживяване и увеличават продажбите на нашите клиенти.</p>
+                                <a href="" class="btn btn-primary py-3 px-5 animated slideInLeft">Научи повече</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative" data-dot="<img src='img/Product-Designer.jpg'>">
+                <img class="img-fluid" src="img/Product-Designer.jpg" alt="">
+                <div class="owl-carousel-inner">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-10 col-lg-8">
+                                <h1 class="display-1 text-white animated slideInDown">Професионални услуги в сферата на индустриалния дизайн</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-3">ANIVIA се специализира в създаването на функционални и естетични дизайн решения за продукти, които не само изглеждат добре, но и подобряват потребителското изживяване и увеличават продажбите на нашите клиенти.</p>
+                                <a href="" class="btn btn-primary py-3 px-5 animated slideInLeft">Научи повече</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative" data-dot="<img src='img/The-complexity-of-product-design.jpg'>">
+                <img class="img-fluid" src="img/The-complexity-of-product-design.jpg" alt="">
+                <div class="owl-carousel-inner">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-10 col-lg-8">
+                                <h1 class="display-1 text-white animated slideInDown">Професионални услуги в сферата на индустриалния дизайн</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-3">ANIVIA се специализира в създаването на функционални и естетични дизайн решения за продукти, които не само изглеждат добре, но и подобряват потребителското изживяване и увеличават продажбите на нашите клиенти.</p>
+                                <a href="" class="btn btn-primary py-3 px-5 animated slideInLeft">Научи повече</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+    <!-- Facts Start -->
+    <div class="container-xxl py-5">
+        <div class="container pt-5">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="fact-item text-center bg-light h-100 p-5 pt-0">
+                        <div class="fact-icon">
+                            <img src="img/icons/icon-2.png" alt="Icon">
+                        </div>
+                        <h3 class="mb-3">Креативен подход</h3>
+                        <p class="mb-0">Оригинални идеи, съчетани с изпълнение на професионално ниво.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="fact-item text-center bg-light h-100 p-5 pt-0">
+                        <div class="fact-icon">
+                            <img src="img/icons/icon-3.png" alt="Icon">
+                        </div>
+                        <h3 class="mb-3">Иновативни решения</h3>
+                        <p class="mb-0">Подобрена ефективност чрез новаторски подход при решаване на проблеми.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="fact-item text-center bg-light h-100 p-5 pt-0">
+                        <div class="fact-icon">
+                            <img src="img/icons/icon-4.png" alt="Icon">
+                        </div>
+                        <h3 class="mb-3">Управление на проектите</h3>
+                        <p class="mb-0">Определяне на ясни цели и изготвяне на детайлна програма за изпълнение на дейностите.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facts End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="about-img">
+                        <img class="img-fluid" src="img/about-1.jpg" alt="">
+                        <img class="img-fluid" src="img/about-2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <h4 class="section-title">ЗА НАС</h4>
+                    <h1 class="display-5 mb-4">Специализирана агенция за индустриален дизайн ANIVIA, която предлага иновативни решения за вашите продукти и услуги.</h1>
+                    <p>Нашите експерти в областта на индустриалния дизайн са готови да ви помогнат да подобрите вашия бизнес, като увеличите конкурентоспособността и дадете нова стойност на продуктите и услугите си.
+                        Ние предоставяме цялостни решения за индустриален дизайн, които включват създаване на концепции, изследвания на пазара, проектиране на продукти и услуги, прототипиране и тестове. С нас вие ще получите персонализиран и професионален подход, който ще ви помогне да постигнете желаните резултати.</p>
+                    <div class="d-flex align-items-center mb-5">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center border border-5 border-primary" style="width: 120px; height: 120px;">
+                            <h1 class="display-1 mb-n2" data-toggle="counter-up">11</h1>
+                        </div>
+                        <div class="ps-4">
+                            <h3>години</h3>
+                            <h3>професионален</h3>
+                            <h3 class="mb-0">опит</h3>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary py-3 px-5" href="">НАУЧИ ПОВЕЧЕ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Project Start -->
+    <div class="container-xxl project py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h4 class="section-title">нАШИТЕ ПРОЕКТИ</h4>
+                <h1 class="display-5 mb-4">Разгледайте част от скорошните ни проекти:</h1>
+            </div>
+            <div class="row g-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-lg-4">
+                    <div class="nav nav-pills d-flex justify-content-between w-100 h-100 me-4">
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4 active" data-bs-toggle="pill" data-bs-target="#tab-pane-1" type="button">
+                            <h3 class="m-0">01. Уред за измерване на влажност</h3>
+                        </button>
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-2" type="button">
+                            <h3 class="m-0">02. Мултикукър</h3>
+                        </button>
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-3" type="button">
+                            <h3 class="m-0">03. Минипринтер</h3>
+                        </button>
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-0" data-bs-toggle="pill" data-bs-target="#tab-pane-4" type="button">
+                            <h3 class="m-0">04. Гейминг колело</h3>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="tab-content w-100">
+                        <div class="tab-pane fade show active" id="tab-pane-1">
+                            <div class="row g-4">
+                                <div class="col-md-6" style="min-height: 350px;">
+                                    <div class="position-relative h-100">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/1ab372165921329.640fd9da52fda.jpg"
+                                            style="object-fit: cover;" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h1 class="mb-3">25 години професионален опит</h1>
+                                    <p class="mb-4">ANIVIA предлага иновативни решения за вашите продукти и услуги.</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Креативен подход</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Иновативни решения</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Управление на проекти</p>
+                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">НАУЧИ ПОВЕЧЕ</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-pane-2">
+                            <div class="row g-4">
+                                <div class="col-md-6" style="min-height: 350px;">
+                                    <div class="position-relative h-100">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/6c6237165630695.640a84d66a141.jpg"
+                                            style="object-fit: cover;" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h1 class="mb-3">25 години професионален опит</h1>
+                                    <p class="mb-4">ANIVIA предлага иновативни решения за вашите продукти и услуги.</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Креативен подход</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Иновативни решения</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Управление на проекти</p>
+                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">НАУЧИ ПОВЕЧЕ</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-pane-3">
+                            <div class="row g-4">
+                                <div class="col-md-6" style="min-height: 350px;">
+                                    <div class="position-relative h-100">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/Screenshot 2023-04-16 134347.png"
+                                            style="object-fit: cover;" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h1 class="mb-3">25 години професионален опит</h1>
+                                    <p class="mb-4">ANIVIA предлага иновативни решения за вашите продукти и услуги.</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Креативен подход</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Иновативни решения</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Управление на проекти</p>
+                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">НАУЧИ ПОВЕЧЕ</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-pane-4">
+                            <div class="row g-4">
+                                <div class="col-md-6" style="min-height: 350px;">
+                                    <div class="position-relative h-100">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/a126b4160184673.63b1518e354a3.jpg"
+                                            style="object-fit: cover;" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h1 class="mb-3">25 години професионален опит</h1>
+                                    <p class="mb-4">ANIVIA предлага иновативни решения за вашите продукти и услуги.</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Иновативни решения</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Управление на проекти</p>
+                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">НАУЧИ ПОВЕЧЕ</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Project End -->
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h4 class="section-title">ОТЗИВИ</h4>
+                <h1 class="display-5 mb-4">Хиляди клиенти, които са се доверили на нашите професионалисти:</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='img/testimonial-1.jpg' alt=''>">
+                    <p class="fs-5">От началото до края на проекта, фирмата доказа своя професионализъм, експертност и талант за иновативно мислене в областта на индустриалния дизайн. </p>
+                    <h3>Корнелия Костова</h3>
+                    <span class="text-primary">Собственик на рекламна агенция</span>
+                </div>
+                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='img/testimonial-2.jpg' alt=''>">
+                    <p class="fs-5">Работехме заедно по създаването на нов продукт, който изискваше уникален и функционален дизайн. Фирмата излезе с много оригинални и креативни идеи, които превъзхождаха нашите очаквания.</p>
+                    <h3>Трендафил Маринов</h3>
+                    <span class="text-primary">Управител на куриерска фирма</span>
+                </div>
+                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='img/testimonial-3.jpg' alt=''>">
+                    <p class="fs-5">Бих препоръчал силно тази фирма на всеки, който търси професионални и иновативни решения в областта на индустриалния дизайн. Комуникацията с тях беше лесна и ефективна, отзивите бяха бързи и конкретни. Нашите идеи и изисквания бяха изцяло внимателно изслушани и включени в крайния дизайн.</p>
+                    <h3>Красимир Борисов</h3>
+                    <span class="text-primary">Счетоводител</span>
+                </div>
+            </div>      
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-body footer mt-5 pt-5 px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-light mb-4">Адрес</h3>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>ул. "Васил Левски" 10, Полски Тръмбеш</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>0882644204</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@anivia.com</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-light mb-4">Линкове</h3>
+                    <a class="btn btn-link" href="index.html">Начало</a>
+                    <a class="btn btn-link" href="about.html">За нас</a>
+                    <a class="btn btn-link" href="service.html">Услуги</a>
+                    <a class="btn btn-link" href="contact.html">Контакти</a>
+
+                </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="#">ANIVIA</a>, Всички права запазени.
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
