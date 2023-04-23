@@ -1,0 +1,16 @@
+function solve(num,num1,operator)
+{
+    if(operator==="+")
+    console.log(num+num1)
+    if(operator==="-")
+    console.log(num-num1)
+    if(operator==="/")
+    console.log(num/num1)
+    if(operator==="*")
+    console.log(num*num1)
+    if(operator==="%")
+    console.log(num%num1)
+    if(operator==="**")
+    console.log(num**num1)
+}
+solve(10,5,"**")
